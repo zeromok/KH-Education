@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis 의 설정파일 -->
+
+<configuration>
+
+    <mappers>
+        <mapper resource="mappers/FirstMapper.xml" />
+        <mapper resource="mappers/SecondMapper.xml" />
+    </mappers>
+    <!-- 매퍼 레지스트리 -->
+
+</configuration>
