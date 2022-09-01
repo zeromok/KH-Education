@@ -6,11 +6,11 @@ JSON은 XML의 parsing과는 다르게 Parsing이 어려워 자바객체로 매�
 ***
 
 아래의 직렬화 라이브러리들을 사용해 실습
-- ***gson***
+- ***gson***<br>
   GsonTests.java<br><br>
-- ***genson***
+- ***genson***<br>
   GensonTests.java<br><br>
-- ***jackson***
+- ***jackson***<br>
   JacksonTests.java<br><br>
-- ***jsonio***
+- ***jsonio***<br>
   JsonIoTests.java<br><br>
