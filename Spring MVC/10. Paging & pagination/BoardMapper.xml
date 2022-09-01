@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.myapp.mapper.BoardMapper">
+
+    <insert
+            id="insert">
+
+        INSERT INTO tbl_board
+                        (title, content, writer)
+        VALUES (#{title}, #{content}, #{writer})
+
+    </insert>
+
+    <insert
+            id="insertSelectKey">
+
+        <selectKey keyProperty="bno" order="BEFORE" resultType="int" >
+            SELECT "ISEQ$$_125310".nextval FROM dual
+        </selectKey>
+
+        INSERT INTO tbl_board(bno, title, content, writer)
+        VALUES(#{bno}, #{title}, #{content}, #{writer})
+
+    </insert>
+
+
+    <select
+            id="select"
+            resultType="org.zerock.myapp.domain.BoardVO">
+
+        SELECT * FROM tbl_board WHERE bno = #{bno}
+
+    </select>
+
+
+    <update
+            id="update">
+
+        UPDATE tbl_board
+        SET
+            title = #{title},
+            content = #{content},
+            writer = #{writer},
+            update_ts = CURRENT_DATE
+        WHERE
+            bno = #{bno}
+
+    </update>
+
+    <!-- 04 페이징처리-->
+    <select
+            id="selectListWithPaging"
+            resultType="org.zerock.myapp.domain.BoardVO">
+--         OFFSET/FETCH 절이 적용된 DQL 문장 생성
+
+        SELECT /*+ index_desc(tbl_board)*/ *
+        FROM tbl_board
+
+        OFFSET (#{currPage} - 1) * #{amount} ROWS
+        FETCH NEXT #{amount} ROWS ONLY
+
+    </select>
+
+    <select id="getTotalCount"
+            resultType="int">
+
+        SELECT /*+ index(tbl_board) */ count(bno)
+        FROM tbl_board
+
+    </select>
+
+
+
+</mapper>
