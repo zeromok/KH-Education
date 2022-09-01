@@ -36,7 +36,10 @@ public class GsonTests {
         Foo obj = new Foo(100, "meroo");
         log.debug("obj : {}", obj);
 
-        // 2. 생성한 자바객체를 JSON 문자열로 변환
+        /*
+        2. 생성한 자바객체를 JSON 문자열로 변환
+            이때 자바객체의 타입명은 JSON 에 사용되는 않는다
+        */
 //        Gson gson = new Gson();
 //        String json = gson.toJson(obj);
 //        log.debug("gson : {}", json);
