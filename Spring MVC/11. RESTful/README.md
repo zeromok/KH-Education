@@ -17,8 +17,11 @@ REpresentational State Transfer 의 약자
 (2) HTTP request URI - 위 (1)의 대상이 되는 자원을 표시
 
 예: http:// ~~~~~~/board/new + PUT (C) => 게시판에 새로운 글을 등록해달라는 요청 --> 순수한 데이터를 응답으로 전송
+
     http:// ~~~~~~/board/123 + GET (R) => 123번 게시글을 읽어서 보내달라는 요청 --> 순수한 데이터를 응답으로 전송
+    
     http:// ~~~~~~/board/77  + POST(U) => 77번 게시글을 업데이트 해달라는 요청 --> 순수한 데이터를 응답으로 전송
+    
     http:// ~~~~~~/board/45  + DELETE (D) => 45번 게시글을 삭제해달라는 요청 --> 순수한 데이터를 응답으로 전송
 
 RESTful 서비스 개발방식은 결국, HTTP method + HTTP re
