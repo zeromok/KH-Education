@@ -15,11 +15,12 @@ import org.zerock.myapp.domain.Ticket;
 
 @RequestMapping("/RESTful/")
 @RestController
+// 이 어노테이션이 붙어있는 클래스의 핸들러 메소드는 순수한 데이터를 반환 할 수 있다.
 public class JSONRestController {
     /*
     요청이 들어오면 JSON 형식의 데이터를 반환 하는 예제
     (produces = MediaType.APPLICATION_JSON_VALUE)
-    vscode 의 rest client 플러그인을 이용해 실습했습니다.
+    vscode 의 rest client 플러그인을 이용해 실습
     */
 
 

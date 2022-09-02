@@ -17,6 +17,7 @@ import java.util.List;
 
 @RequestMapping("/RESTful/")
 @RestController
+// 이 어노테이션이 붙어있는 클래스의 핸들러 메소드는 순수한 데이터를 반환 할 수 있다.
 public class XMLRestController {
     /*
     요청이 들어오면 XML 형식의 데이터를 반환 하는 예제

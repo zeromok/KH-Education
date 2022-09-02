@@ -18,13 +18,14 @@ import java.util.Set;
 @NoArgsConstructor
 
 @RestController
+// 이 어노테이션이 붙어있는 클래스의 핸들러 메소드는 순수한 데이터를 반환 할 수 있다.
 @RequestMapping("/RESTful/")
 public class PathVariableController {
 
     /*
     RESTful 방식의 Request Mapping => Request URI(대상특정자원) + HTTP method(CRUD)
     CREATE(**PUT**), READ(GET), UPDATE(POST), DELETE(**DELETE**) => 가장 일반적인 경우 소개
-    => 개발주테마다 각 전송방식에 별도의 의미를 부여해서 사용
+    => 개발주체마다 각 전송방식에 별도의 의미를 부여해서 사용
     HTTP protocol : 대락 15가지 정도의전송방식이 정의되어 있음
     */
     @GetMapping(
@@ -35,6 +36,7 @@ public class PathVariableController {
 //    public Map<String , String > getPathVariable(         // 2. Map
     public Set<String > getPathVariable(                    // 3. Set
                                     @PathVariable("category") String category,
+                                    // @PathVariable : 메소드의 매개변수를 URI 변수에 넣어준다.
                                     @PathVariable("productId") Integer productId) {
         log.trace("==== getPathVariable({}, {}) ====", category, productId);
 

@@ -17,6 +17,7 @@ import org.zerock.myapp.domain.Ticket;
 
 @RequestMapping("/responseentity")
 @RestController
+// 이 어노테이션이 붙어있는 클래스의 핸들러 메소드는 순수한 데이터를 반환 할 수 있다.
 public class ResponseEntityController {
 
     /*
