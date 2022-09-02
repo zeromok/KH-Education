@@ -16,7 +16,7 @@ REpresentational State Transfer 의 약자
 (1) HTTP method (전송방식)가 확장됨 - GET (R) / POST (U) / PUT (C) / DELETE (D)
 (2) HTTP request URI - 위 (1)의 대상이 되는 자원을 표시
 
-예: http:// ~~~~~~/board/new + PUT (C) => 게시판에 새로운 글을 등록해달라는 요청 --> 순수한 데이터를 응답으로 전송
+    http:// ~~~~~~/board/new + PUT (C) => 게시판에 새로운 글을 등록해달라는 요청 --> 순수한 데이터를 응답으로 전송
 
     http:// ~~~~~~/board/123 + GET (R) => 123번 게시글을 읽어서 보내달라는 요청 --> 순수한 데이터를 응답으로 전송
     
