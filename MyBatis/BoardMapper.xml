@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- SQL 처리를 수행하기 위해  SQL Mapper XML 파일에, 수행시킬 SQL 문장을 저장 #1 -->
+
+<!-- 여러개의 Mapper XML 파일이 존재할 때, 각 Mapper XML 파일의 최상위 태그의 namespace 속성의 값은 고유해야 함 -->
+<mapper namespace="mokk">
+    <!-- namespace 의 값은 반드시 가져야 한다. -->
+    <!-- 각각의 mapper.xml 파일마다 구분지어주는 속성 namespace -->
+    <!-- 관례 : 파일의 이름을 그대로 쓴다. -->
+
+<!--    현재의 Mapper XML 파일안에 등록되어 있는, 수많은 다른 태그들과 충돌되지 않는 고유한 식별자값을 id 속성에 지정해야 함-->
+    <select
+            id="selectAllBoards"
+            resultType="org.zerock.myapp.domain.BoardVO" >
+        <!-- 각각의 태그를 구분지어주는 식별자속성 id -->
+        <!-- resultType : 결과셋을 어떤 타입으로 받을 것인가? -->
+
+        <!-- 수행시킬 SQL문장을 만들어 여기다 놓으라 -->
+        <!-- SQL 개발도구에서 유효한 SQL문장을 우선 만들라 -->
+        <!-- 잘 수행되는 SQL문장을 여기다가 copy해 넣으라 -->
+        SELECT * FROM TBL_BOARD
+    </select>
+<!-- SQL 쿼리를 가져올때에는 세미콜론을 빼고 가져온다. -->
+
+    <select id="selectBoard">
+        SELECT * FROM TBL_BOARD WHERE bno = #{bno}
+    </select>
+<!--    #{} 으로 바인드 변수 설정해주기-->
+
+    <select id="getCurrentTime"
+            resultType="java.lang.String">
+        SELECT to_char(current_date, 'yyyy/MM/dd HH24:mi:ss') AS now FROM dual
+    </select>
+
+    <select id="bySelectAllBoard"
+            resultType="org.zerock.myapp.domain.BoardVO">
+        SELECT * FROM tbl_board WHERE bno > #{theBno} AND title LIKE '%'||#{search}||'%'
+    </select>
+</mapper>

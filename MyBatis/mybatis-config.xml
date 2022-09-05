@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis 의 설정파일 -->
+
+<configuration>
+
+    <typeAliases>
+        <typeAlias type="org.zerock.myapp.domain.BoardVO" alias="BoardVO"/>
+    </typeAliases>
+
+    <environments default="development">
+
+
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!-- pom.xml 의 JDBC 디펜던시에 포함되어 있다. -->
+
+            <dataSource type="UNPOOLED">
+                <!-- 커넥션풀 이자 인터페이스 -->
+
+                <!-- <property name="driver" value="oracle.jdbc.OracleDriver"/> -->
+                <!-- <property name="url" value="jdbc:oracle:thin:@atp20191201_high?TNS_ADMIN=C:/opt/OracleCloudWallet/ATP"/> -->
+
+                <property name="driver" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+                <property name="url" value="jdbc:log4jdbc:oracle:thin:@db20220510181325_high?TNS_ADMIN=/Users/mokpro/OPT/OracleCloudWallet/ATP"/>
+
+                <property name="username" value="ADMIN"/>
+                <property name="password" value="Oracle12345678"/>
+
+                <!-- <property name="defaultTransactionIsolationLevel" value="" /> -->
+                <!-- <property name="defaultNetworkTimeout" value="1000" /> -->
+                <property name="driver.encoding" value="utf8" />
+                <!-- JDBC 드라이버가 사용할 문자포맷 -->
+            </dataSource>
+        </environment>
+
+
+        <environment id="production">
+            <transactionManager type="JDBC"/>
+
+            <dataSource type="POOLED">
+                <!-- <property name="driver" value="oracle.jdbc.OracleDriver"/> -->
+                <!-- <property name="url" value="jdbc:oracle:thin:@atp20191201_high?TNS_ADMIN=C:/opt/OracleCloudWallet/ATP"/> -->
+
+                <property name="driver" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+                <property name="url" value="jdbc:log4jdbc:oracle:thin:@db20220510181325_high?TNS_ADMIN=/Users/mokpro/OPT/OracleCloudWallet/ATP"/>
+
+                <property name="username" value="ADMIN"/>
+                <property name="password" value="Oracle12345678"/>
+
+                <property name="poolMaximumActiveConnections" value="10" />
+                <!-- 최대 풀 갯수 -->
+                <property name="poolMaximumIdleConnections" value="3" />
+                <!-- 쉴떄 풀 갯수 -->
+                <property name="poolTimeToWait" value="20000" />
+                <!-- 20초 동안 기다려도 커넥션이 안오면 닫는다. -->
+                <property name="poolPingQuery" value="SELECT 1 FROM dual" />
+                <!-- 핑을 보내 살아있는/죽어있는 커넥션을 확인한다. -->
+                <property name="poolPingEnabled" value="true" />
+                <!-- 핑 쿼리 사용할께 -->
+                <property name="poolPingConnectionsNotUsedFor" value="60000" />
+                <!-- 핑 쿼리를 언제 던지느냐? 60초동안 누구도 사용하지 않은 커넥션에 대해 -->
+
+                <property name="driver.encoding" value="utf8" />
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <mappers>
+<!-- Mapper XML 파일 등록 -->
+<!-- SQL 처리방식의 방법 #1 -->
+<!-- VO 객체생성, Mapper.xml 파일에 수행할 SQL 쿼리 저장 후 설정파일에 설정 -->
+        <mapper resource="mappers/BoardMapper.xml"/>
+        <mapper resource="mappers/Board2Mapper.xml" />
+
+<!--        <mapper class="org.zerock.myapp.mapper.BoardMapper" />-->
+<!-- Mapper Interface 등록 -->
+
+        <package name="org.zerock.myapp.mapper"/>
+        <!-- Mapper Interface 등록 #2 : Mapper Interface 들이 모여있는 패키지 단위로 등록 -->
+    </mappers>
+
+</configuration>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.Board2Mapper">
+
+    <sql id="commonSQL">
+        SELECT *
+        FROM tbl_board
+    </sql>
+
+    <select id="findBoardByBno"
+            resultType="org.zerock.myapp.domain.BoardVO">
+
+        SELECT * FROM tbl_board
+        <if test="bno != null">WHERE bno = #{bno}</if>
+
+    </select>
+<!--    if 태그 : test 속성을 만족하면 활성화(true/false)-->
+<!--    검색조건 1 : 특정 bno 에 해당하는 게시글 하나-->
+<!--    test 속성의 값은 OGNL 언어기반으로 구성되어 있다.-->
+
+    <select
+            id="findBoardByTitle"
+            resultType="org.zerock.myapp.domain.BoardVO">
+
+        SELECT * FROM tbl_board
+            <where>
+                <if test="title != null"> title LIKE '%'||#{title}||'%' </if>
+            </where>
+
+    </select>
+    <!-- 검색조건 2 : 특정 검색어를 포함하고 있는 모든 게시글 조회 -->
+    <!-- <where>태그 안에 콘텐츠가 들어오면 무조건 WHERE절을 생성한다. -->
+    <!-- 그래서 if 태그와 혼용해서 쓴다. -->
+
+    <select id="findBoardByWriter"
+            resultType="org.zerock.myapp.domain.BoardVO">
+
+        SELECT * FROM tbl_board
+            <trim prefix="WHERE" prefixOverrides="AND || OR" >
+                <if test="writer != null">writer LIKE '%'||#{writer}||'%'</if>
+            </trim>
+
+    </select>
+<!-- prefix="명령어" : 하위 엘리먼트 처리 후 내용이 있다면 앞에 명령어를 추가해준다. -->
+<!-- prefixOverrides="명령어" : 하위 엘리먼트 처리 후 엘리먼트 앞에 해당 명령어가 있다면 지워버림  -->
+
+
+    <select id="findBoardByBnoAndTitle"
+            resultType="org.zerock.myapp.domain.BoardVO">
+
+        SELECT * FROM tbl_board
+            <where>
+                <if test="bno != null">bno > #{bno}</if>
+                <if test="title != null">AND title LIKE '%'||#{title}||'%'</if>
+            </where>
+
+    </select>
+
+
+    <select id="findBoardByBnoOrTitle"
+            resultType="org.zerock.myapp.domain.BoardVO" >
+
+        SELECT * FROM tbl_board
+            <where>
+                <choose>
+                    <when test="bno != null">
+                        bno > #{bno}
+                    </when>
+                    <when test="title != null">
+                        OR title LIKE '%'||#{title}||'%'
+                    </when>
+                    <otherwise>
+                        bno > 0
+                    </otherwise>
+                </choose>
+            </where>
+    </select>
+    <!-- otherwise : optional -->
+    <!-- 자바의 스위치와 비슷하다 -->
+    <!-- when : case, default : otherwise -->
+
+    <select
+            id="findBoardByBnos"
+            resultType="BoardVO">
+
+        <include refid="commonSQL"/>
+
+        <!-- 여러개의 BNO와 일치하는 게시글 추출을 위한 조건식 구성 -->
+        <where>
+            bno IN
+
+            <foreach collection="list" open="(" index="idx" close=")" item="bno" separator=",">
+                <!-- collection="어떠한 객체가 들어오는가?" -->
+                <!-- open="반복 전 여기에 들어온 문자로 시작", close="반복 후 여기에 들어온 문자로 끝난다." -->
+                <!-- index="컬렉션에 들어오 객체에서 요소를 하나씩 꺼내 인덱싱 해줌" -->
+                <!-- item="바인드 변수명과 같게 해주면 요소가 하나씩 들어감" -->
+                <!-- separator="요소마다 구분점을 만들어준다." -->
+                #{bno}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>
