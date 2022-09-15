@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+            자바스크립트의 변수는 크게 2가지 : 전역변수, 지역변수
+            전역과 지역변수를 나누는 기준은 ES5에서는 오로지 하나임
+            함수의 중괄호 블록내에서, 반드시 var키워드를 사용하여 선언된 변수만이
+            오로지 지역변수임. 그외의 다른 어떤 경우도 모두 전역변수가 됨
+        */
+
+        stdName="홍길동";    // var 키워드 생략 // 허용     
+        comGrade=96;         // var 키워드 생략 // 허용
+
+       
+        var stdName;         // 위에서 정의된 변수를 재선언 -> 변수값이 그대로 보존
+        var comGrade;        // 위에서 정의된 변수를 재선언 -> 변수값이 그대로 보존
+        /*
+            위 변수선언문은 값을 주지 않았으니, undefined로 생각 할 수 있지만.
+            이미 위에서 완벽히 값으로 초기화된 정의된 변수이기 때문에, 정의된 변수의
+            재선언은 아무런 효력이 없음
+        */
+
+        
+        document.write("학생 이름 : " + stdName + "<br>");
+        document.write("컴퓨터 점수 : " + comGrade + "<br>");
+   </script>
+
+</body>
+</html>

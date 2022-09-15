@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function getGrade() {   // 함수정의
+
+            var kor = 95;
+            // 지역변수 = 함수블록 + var키워드
+
+        }// f
+
+        var kor = 100;
+        // 전역변수 = 지역변수 이외의 모든 변수
+
+        getGrade(); // 함수호출
+
+        document.write("국어점수 : ", kor); // 100
+    </script>
+
+    <script>
+        function getGrade() {   // 함수 정의
+
+            kor=95;
+            // 자동 전역 변수 (함수 내부에서 var키워드를 생략함)
+
+        }// f
+
+        var kor=100;
+        // 전역 변수
+
+        getGrade(); // 함수 호출
+
+        document.write("국어 점수 : " + kor + "<br>");  // 95
+    </script>
+
+</body>
+</html>

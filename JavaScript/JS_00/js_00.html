@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <script>
+        var num=0;
+        // 변수의 선언 및 초기화 = 변수정의
+
+        document.write("head 태그내 실행순서 : " + num + "<br>");
+        /*
+            변수선언 및 초기화 = 변수정의
+            위의 메소드 시그니처는, 실은 자바스크립트 언어의
+            시그니처가 아니라, 소위 Typescript란 언어의 메소드 시그니처임
+            (method) Document.write(...text: string[]): void
+            document.write("body 태그 내 실행 순서 : " + num + "<br/>");
+            == document.write("body 태그 내 실행 순서 : ",  num, "<br/>");
+        */
+    </script>
+
+    <script>
+        var num=1;
+        // 변수의 선언 및 초기화 = 변수정의
+
+        document.write("head 태그내 실행순서 : " + num + "<br>");
+    </script>
+
+<body>
+    <script>
+        var num=2;
+        // 변수의 선언 및 초기화 = 변수정의
+
+        document.write("head 태그내 실행순서 : " + num + "<br>");
+    </script>
+
+    <script>
+        var num=3;
+        // 변수의 선언 및 초기화 = 변수정의
+
+        console.clear();
+        console.log("head 태그내 실행순서 : " + num);
+        // 콘솔창에 출력해보자
+        
+    </script>
+
+</body>
+</html>
