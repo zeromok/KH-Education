@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        outloop:   // label name
+        for(let i=0; i<3; i++) {     
+            
+            inloop:  // label name
+            for(let j=0; j<3; j++) {  
+
+                if(i===1 && j===0) {
+                    continue outloop;
+                    // label을 이용해 outloop 실행, 안쪽 for문을 빠져 나간다.
+                }
+
+            document.write("i = " + i + ", j = " + j + "<br>");
+
+            }
+        }
+    </script>
+
+</body>
+</html>

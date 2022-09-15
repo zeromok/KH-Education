@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        console.clear();
+
+        const text1="함수 선언 전 호출"; 
+        const text2="함수 선언 후 호출"; 
+
+        // 함수의 호이스팅(hoisting)
+        printMsg(text1);            // 함수 선언 전 호출
+
+        // 1급 객체로, 스크립트 엔진이, 다른 실행문장들보다 가장 먼저 메모리에 객체로 생성해 놓음
+        function printMsg(msg) {    // 함수 선언
+
+            console.log(`함수 호출 메시지 : ${msg}`);
+
+        }
+
+        printMsg(text2);            // 함수 선언 후 호출
+        
+    </script>
+    
+</body>
+</html>
