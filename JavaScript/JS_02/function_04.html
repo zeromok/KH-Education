@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var printMsg=function(msg) {    // 무명 함수 선언
+        //     document.write("무명 함수 : " + msg + "<br>");
+        // }
+        // 우선순위는 먼저 생성된 순으로...
+        // 순서를 바꿔도 1급객체이므로 우선순위는 변하지 않는다.
+
+        // const printMsg=function(msg) {    // 무명 함수 선언
+        //     document.write("무명 함수 : " + msg + "<br>");
+        // }
+        // const 변수로 바꿀 시 에러
+
+        function printMsg(msg){         // 기본 함수 선언
+            document.write("기본 함수 : " + msg + "<br>");
+        }
+
+        var printMsg = msg =>     // 람다식으로 만들기 / 함수표현식은 얼마든지, ES6이상에서 소개된, 화살표 함수(arrow function)로
+                                  // 대체 가능 -> 이것이 곧 자바언어의 람다식과 동일 
+             document.write("무명 함수 : " + msg + "<br>");
+         
+
+        printMsg("호출되었습니다.");    // 함수 호출 
+
+    </script>
+</body>
+</html>

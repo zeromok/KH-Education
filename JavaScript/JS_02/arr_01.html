@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var city = ["Seoul", "Busan", "Incheon"];   // 배열 리터럴
+
+        function printArr() {
+            console.clear();
+
+            for( let i=0; i<city.length; i++ ) {
+
+                console.log(`city[${i}] = ${city[i]}`);
+                // console.log("배열 데이터["+ i + "] = " + city[i] + "<br>");
+                
+                /* 
+                    ${} : 템플릿 리터럴
+                          처리된 값을 문자열로 반환
+                 */
+
+            }
+        }// printArr()
+
+        printArr();
+
+    </script>
+
+</body>
+</html>

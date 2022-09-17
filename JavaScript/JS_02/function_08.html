@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function add(x, y, z) {
+            console.clear();
+
+            console.log(arguments);
+            /*
+                js 함수 블록 내에서만 사용가능한 특수한 키워드가 있다. : arguments(전달인자)
+                
+                arguments : 바로 배열과 비슷 하지만 배열 그 자체는 아니다.
+                            매개변수는 3개지만 매개변수로 들어온 모든 인자값을 표현
+            */
+
+            let sum = 0;
+            //arguments.forEach(e => sum += e);
+            for( let e of arguments){
+                sum += e;
+            }
+            console.log(sum);
+            
+            //return x+y+z;
+
+//------------------------------------------------------------------------------
+
+            // var sum;
+            // if((y===undefined) && (z===undefined) && (x===undefined)){
+            //     sum = 0;
+            // }else if((y===undefined) && (z===undefined)) {
+            //     sum=x;
+            // }
+            // else if(z===undefined) {
+            //     sum=x+y;
+            // }
+            // else {
+            //     sum=x+y+z;
+            // }
+            // return sum;  
+
+        }// add()
+
+        // var r0=add();
+        // var r1=add(2);       
+        // var r2=add(2, 3);       
+        var r3 = add(4, 5, 6, 7, 8);
+
+        // document.write("함수 호출 인자 부족 : " + r0 + "<p/>");
+        // document.write("함수 호출 인자 부족 : " + r1 + "<p/>");
+        // document.write("함수 호출 인자 부족 : " + r2 + "<p/>");
+        // document.write("정상적인 함수 호출 : " + r3 + "<p/>");
+    </script>
+</body>
+</html>

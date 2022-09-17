@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const text1="함수 선언 전 호출 에러"; 
+        const text2="함수 선언 후 호출만 가능"; 
+
+        // 함수가 함수표현식 으로 선언 및 대입될 때에는,
+        // 이전에 가능했었던, 함수의 호이스팅 효과를 낼 수가 없음
+
+        // printMsg(text1);             // 함수 선언 전 호출 에러(호이스팅 불가)
+
+        let printMsg=function(msg) {    // 함수표현식으로 변수에 대입*** => 이래서 1급객체 라고 함
+        // function pintMsg(msg) {;;} 
+
+            console.clear();
+            console.debug(`printMsg(${msg}) invoked`);
+
+            document.write("함수 호출 메시지 : " + msg + "<br>");
+
+        }
+
+        printMsg(text2);                // 함수 선언 후 호출 가능
+
+    </script>
+    
+</body>
+</html>

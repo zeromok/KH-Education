@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 아래 배열의 공백 원소는 실제 undefined 값이자, 타입도 undefined 인 원소임
+        const arr=[95, 88, ,72 ,68, ,99 ,82 ,78, 85];   // 10명 중 8명의 점수만 입력
+
+        var getAvg;
+
+        function printAvg() {
+
+            let sum=0; 
+
+            document.write(arr.length + "명의 점수 입력<p/>");
+
+            for( let i=0; i<arr.length; i++) {
+                sum+=arr[i];  
+            }  
+            return (sum/arr.length); // 평균 구하기
+
+        }// pintArr()
+
+        getAvg=printAvg();    // 함수 호출
+
+        document.write("평균 : <b>" + getAvg + "</b><p/>");
+
+    </script>
+    
+</body>
+</html>
