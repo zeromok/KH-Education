@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const arrdata=[];
+
+        function insertArr() {    
+
+            console.group('insertArr'); // 그룹으로 묶기
+
+            for(let i=0; i<=99; i++) { // 배열에 새로운 원소를 추가(생성)
+
+                arrdata[i]=i+1;                      
+
+                // document.write(arrdata[i] + " ");
+                console.log(arrdata[i] + " ");    
+            }
+
+            console.groupEnd();
+
+        }// insertArr()
+
+        function delArr() {    // 배열의 홀수번째 원소의 초기화(0으로)
+
+            console.group('delArr');
+
+            for(let i=0; i<arrdata.length; i++) {
+                if(i%2==0) {                        
+                    arrdata[i]=0;                   
+                }
+                continue;
+            }
+
+            selectArr();
+
+            console.groupEnd();
+
+        }// delArr()
+
+        function selectArr() {   // 배열의 순회
+
+            console.group('selectArr');
+
+            for(let i=0; i<arrdata.length; i++) {
+                //document.write(arrdata[i] + " ");   
+                console.log(arrdata[i] + " ");
+            }
+
+            // document.write("<p>홀수 번째 데이터 초기화 완료!" + "</p>");
+            // document.write("<a href='22_arr.html'>돌아가기</a>");
+        }
+
+        insertArr();    
+
+    </script>
+
+    <p></p>
+
+    <button type="button" onclick="javascript:delArr();">배열의 홀수 번째 데이터 초기화</button>
+</body>
+</html>

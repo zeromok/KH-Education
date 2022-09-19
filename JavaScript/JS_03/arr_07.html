@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Array 생성자 함수를 이용한 "배열객체"의 생성 예제
+        // 이 생성자 함수의 매개변수는 가변인자 이기에, 0개 이상의 원소를 지정할 수 있다.
+        const city=new Array("Seoul","Busan","Incheon", true, 100, 3.14);
+
+        console.clear();
+        city.forEach(e => console.log(e));
+        console.log(city);
+
+        // function printArr() {
+        //     var i; 
+        //     for(i=0; i<city.length; i++) {
+        //         document.write("배열 데이터 ["+ i + "] = " + city[i] + "<br>");  
+        //     }
+        // }  
+
+        // printArr();
+
+    </script>
+</body>
+</html>

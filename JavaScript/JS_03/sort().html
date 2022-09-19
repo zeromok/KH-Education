@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            sort 메소드
+                - 배열의 원소를 정렬
+         */
+
+        var ndata1=[19, 38, 67, 26, 55, 24, 53, 12, 31]; 
+        var ndata2=[132, 2, 41, 123, 45, 1234, 6, 29, 4567]; 
+
+        var edata=['Apple', 'Html', 'Game', 'Computer', 'Java']; 
+        var kdata=['서울', '부산', '구포', '대구', '인천']; 
+
+        document.write("수치 정렬1 : " + ndata1.sort() + "<p/>");
+        document.write("수치 정렬2 : " + ndata2.sort() + "<p/>");
+
+        /* 
+            실제 sort메소드의 정렬방식은,  배열의 원소가 넘버이든, 스트링이든,
+            원소값의 각 자릿수 별로 비교하여 크기를 정하다 보니, 결과가 소위 사전순서
+            방식으로 됨 -> 이건 우리가 원하는 일반적인 정렬결과가 아님
+            일반적인 정렬을 수행하게 만들려면, sort메소드의 인자값으로, 비교자
+            comparator 함수 : 2개의 값을 받고 크기를 비교해 크고/작은지 숫자로 반환
+            ex) num1 > num2 return +양수값; = 보통 +1반환
+                num1 == num2 return 0;
+                num1 < num2 return -음수값; = 보통 -1반환
+         */
+        document.write("수치 정렬2-1 : " + ndata2.sort(function(a, b) {return a - b;}) + "<p/>");
+        // 오름차순
+        
+        document.write("수치 정렬2-2 : " + ndata2.sort(function(a, b) {return b - a;}) + "<p/>");
+        // 내림차순
+
+        document.write("영문 정렬 : " + edata.sort() + "<p/>");
+        document.write("한글 정렬 : " + kdata.sort() + "<p/>"); 
+    </script> 
+    
+</body>
+</html>

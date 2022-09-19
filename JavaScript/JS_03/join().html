@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            join 메소드
+                - 배열에 저장된 모든 원소를 문자열로 변환한 후 연결하여 출력
+         */
+
+        var city=["서울", "부산", "대전"]; 
+
+        var joindata1=city.join();          // default seperator : 쉼표
+        var joindata2=city.join('-');
+        var joindata3=city.join(' 그리고 ');
+
+        console.clear();
+
+        console.group('join');
+        console.log(`${joindata1}`);
+        console.log(`${joindata2}`);
+        console.log(`${joindata3}`);
+        console.groupEnd();
+        
+        // document.write("조인 결과1 : " + joindata1 + "<p/>");
+        // document.write("조인 결과2 : " + joindata2 + "<p/>");
+        // document.write("조인 결과3 : " + joindata3 + "<p/>");
+
+    </script> 
+    
+</body>
+</html>
