@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.clear();console.group('forEach');
+        var kdata=['서울', '부산', '청주', '대구']; 
+        console.log(kdata);
+
+        // forEach가 개별원소의 값과 인덱스 번호를 넘겨주니
+        // 개별원소에 대해 무엇을 할지를, 함수로 정의(task)해주고, 
+        // 이 함수를 foreach에 매개변수로 전달해주면 된다.
+        // function printArr(item, index) {
+        //     document.write("배열 데이터 [" + index + "] : " + item + "<br>");
+        // }
+
+            // function task(item, index) {
+            //     console.debug(`task(${item}, ${index})`);
+
+            // }
+
+        // kdata.forEach(printArr);
+        // kdata.forEach(task);        // 베열의 내부 반복자
+
+//------------------------------------------------------------------------
+
+        // 익명함수 이용 예제
+        kdata.forEach(function (item, index) {
+                console.debug(`task(${item}, ${index})`);
+
+            });
+
+//------------------------------------------------------------------------
+
+        // 람다식 이용 예제
+        kdata.forEach(
+            (item, index) => console.debug(`task(${item}, ${index})`)
+            );
+
+
+        console.groupEnd();
+    </script> 
+</body>
+</html>

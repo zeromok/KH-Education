@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.clear();console.group('map');
+
+        var data=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+        console.log(data);
+
+        function mapArr(value) {
+            console.debug(value);
+
+            //return value*value;          
+            return value**2;
+        }
+
+        var mapdata=data.map(mapArr);    
+
+        console.log(data, mapdata);
+        // document.write("원래 배열 :" + data + "<p/>");
+        // document.write("map 메소드 적용 배열 :" + mapdata + "<p/>");
+
+        console.groupEnd();
+    </script>     
+</body>
+</html>
