@@ -8,17 +8,30 @@
 </head>
 <body>
     <script>
+
+        /* 
+            map
+                배열의 데이터를 함수의 인자로 전달하고, 함수의 수행 결과를 반환 받아 새로운 배열 생성
+        */
+
         console.clear();console.group('map');
 
         var data=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
         console.log(data);
 
         function mapArr(value) {
+
             console.debug(value);
+            /* 
+                log랑 debug 랑 뭐가 다르죠?
+                    IE, Firefox 및 Chrome 콘솔의 경우 .debug ()는 호환성 향상을 위해 추가 된 .log ()의 별칭 일뿐입니다.
+                    표시될때 색이 다르다.
+            */
 
             //return value*value;          
             return value**2;
-        }
+
+        }// mapArr()
 
         var mapdata=data.map(mapArr);    
 
@@ -27,6 +40,7 @@
         // document.write("map 메소드 적용 배열 :" + mapdata + "<p/>");
 
         console.groupEnd();
+
     </script>     
 </body>
 </html>

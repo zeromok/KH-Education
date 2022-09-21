@@ -8,12 +8,20 @@
 </head>
 <body>
     <script>
-        // 연관배열은 키값이 무조건 문자열
+
+        /* 
+            연관 배열
+                배열의 인덱스를 정수뿐만이 아닌 다양한 타입으로 설정한 배열을 의미
+                이러한 연관 배열을 사용하면 키값에 좀 더 명확한 의미를 부여할 수 있다.
+        */
+
+        // 연관배열은 키값(인덱스)이 무조건 문자열
 
         console.clear();console.group('arr');
 
         var data={'f0':100, 'f1':200, 'f2':300};
-        console.log(data);
+
+        console.log(data); 
 
         data['f3']=400;    // 배열 데이터 저장
         data.f4=500;       // 배열 데이터 저장
@@ -30,6 +38,7 @@
         // document.write(data['f2'] + "<br>");
         // document.write(data['f3'] + "<br>");
         // document.write(data['f4'] + "<br>");
+
     </script>
 </body>
 </html>

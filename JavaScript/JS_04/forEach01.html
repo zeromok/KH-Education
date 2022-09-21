@@ -8,14 +8,17 @@
 </head>
 <body>
     <script>
+
         console.clear();console.group('forEach:배열원소의 총 합');
         const data=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
         console.log(data);
 
         var sum=0;
         function addArr(value) {
+
             sum+=value;      
-        }
+
+        }// addArr()
 
         data.forEach(addArr);
 
@@ -25,9 +28,9 @@
         console.groupEnd();
 
 
-
-        data.forEach( e => sum += e);
-        console.log(sum);
+        // 람다식 표현
+        // data.forEach( e => sum += e);
+        // console.log(sum);
 
 
     </script> 

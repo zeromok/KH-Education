@@ -7,34 +7,49 @@
     <title>Document</title>
 </head>
 <body>
+
     <p id="msg1"></p> 
     <p id="msg2"></p> 
     <p id="msg3"></p> 
+    
     <script>
 
         //리터럴 방식으로 1회성 객체를 생성
         const obj={       // 메소드를 정의
             m1: function() {
+
                 return "Hello Sonata";
+
             },
             m2: function(a) {
+
                 var result=a;
                 return result;
+
             },
             m3: function(a, b) {
+
                 var result=a+b;
                 return result;
+
             }
+
         };
 
+        /* 
+            innerText : element 안의 text 값들만을 가져옴
+            innerHTML : element 안의 html, xml을 가져옴
+        */
+
         document.querySelector('#msg1').innerText=obj.m1();
-        // innerText 차이점
+        
         document.querySelector('#msg2').innerHTML=obj.m2(100);
         document.querySelector('#msg3').innerHTML=obj.m3(100, 200);
 
         // document.getElementById("msg1").innerHTML=obj.m1();
         // document.getElementById("msg2").innerHTML=obj.m2(100);
         // document.getElementById("msg3").innerHTML=obj.m3(100, 200);
+
     </script>
 
 </body>

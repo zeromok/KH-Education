@@ -13,7 +13,14 @@
         <p id="var3"></p>
 
         <script>
+
+            /* 
+                사용자 정의 객체
+                    사용자가 직접 객체의 속성과 메소드를 정의하여 사용하는 객체
+            */
+
             console.clear();console.group('User-defined Object');
+
             // 객체 리터럴 방식으로 1회성,  사용자-정의 객체 생성
             var car={
                 name: 'Sonata',
@@ -22,12 +29,13 @@
             }; 
             console.log(car);
 
-            // 
+            
             document.getElementById("var1").innerHTML="자동차 이름 : " + car['name'];
             document.getElementById("var2").innerHTML="자동차 속도 : " + car.speed;
             document.getElementById("var3").innerHTML="자동차 색상 : " + car.color;
 
             console.groupEnd();
+
         </script>
     </body>
 </body>
