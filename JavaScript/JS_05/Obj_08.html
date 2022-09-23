@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function add() {
+
+            console.clear(); console.group('add');
+            var header=document.createElement('h3');                            // 요소 노드 생성
+            var textNode=document.createTextNode('내 이름은 홍길동입니다.');    // 텍스트 노드 생성
+
+            header.appendChild(textNode);          // 요소 노드의 자식으로 텍스트 노드 연결
+            console.log(header);
+
+            // 참고로 document의 속성으로 head(<head>태그)와 body(<body>태그)가 있음
+            document.body.appendChild(header);     // <body>태그에 header(<h3>태그)를 자식으로 추가
+                
+            console.groupEnd();
+        };
+    </script>
+
+</head>
+<body>
+    <!-- 이벤트를 처리하려면 아래의 4가지를 필요로 함 -->
+    <!--
+        1. E.targer (여기서 E는 Event의미)  : a 태그
+        2. E.type                       : 마우스 클릭
+        3. E.listener                   : onclick속성
+        4. E.handler                    : add()함수 -->
+    <a href="#" onclick="add()">당신의 이름은 무엇입니까?</a> 
+
+    <!-- 새로운 요소노드는 여기에 추가됨 -->
+</body>
+</html>

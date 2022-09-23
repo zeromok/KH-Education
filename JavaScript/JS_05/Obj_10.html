@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function textstyle() {
+            let p = document.querySelector("#msg");
+            p.style.color = "blue"              // Element 문서객체는 style 속성을 가지고 있고
+            p.style.fontSize = "30px"           // 이 style 속성의 멤버로, CSS3의 모든 속성을 역시
+            p.style.fontStyle = "italic"        // 하위 속성으로 가지고 있기 때문에, 모든 CSS속성 변경가능
+
+            // document.querySelector("#msg").style.color="blue";
+            // document.querySelector("#msg").style.fontSize="30px";
+            // document.querySelector("#msg").style.fontStyle="italic";
+        };
+
+        function texthidden() {
+            //document.querySelector("#msg").style.visibility="hidden";
+            document.querySelector("#msg").style.display="none";
+        };
+
+        function textvisible(){
+            // document.querySelector("#msg").style.visibility="visible";
+            document.querySelector("#msg").style.display="block";
+        };
+    </script>
+
+</head>
+<body>
+    <p id="msg">문서 객체 스타일 변경하기</p>
+    <input type="button" onclick="textstyle()" value="텍스트 스타일 변경">
+    <input type="button" onclick="texthidden()" value="텍스트 숨기기">
+    <input type="button" onclick="textvisible()" value="텍스트 보이기">
+
+</body>
+</html>

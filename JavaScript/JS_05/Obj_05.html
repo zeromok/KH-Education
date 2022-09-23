@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="car"></p>
+
+    <p>[Car1 속성]</p>
+    <p id="car0"></p>
+
+    <p>[Car2 속성]</p>
+    <p id="car1"></p>
+
+    <p>[Car3 속성]</p>
+    <p id="car2"></p>
+
+    <script>
+
+        // Array 생성자 함수의 매개변수는 가변인자
+        var car=new Array (
+            ['Sonata','blue',100],
+            ['Jeep','red',70],
+            ['Passt', 'white', 150]
+        ); // Array 생성자 함수로 배열을 만들면서, 동시에 원소(배열임)을 넣음
+        console.log(car);
+
+        var cname=document.querySelector("#car");    
+        cname.textContent="car[2][1] : "+ car[2][1]; 
+        for(var i=0; i<3; i++) {    
+            var cname=document.querySelector("#car"+i);
+            cname.textContent=car[i];
+        }
+
+    </script>
+</body>
+</body>
+</html>

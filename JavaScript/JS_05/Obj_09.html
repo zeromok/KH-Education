@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add() {
+            var img=document.createElement('img');
+
+            // 위에 새로이 생성한 <img>태그(요소노드)에 속성값을 설정
+            img.src='html5.jpg';        // img.setAttribute('src', 'html5.jpg')
+            img.width=100;              // img.setAttribute('width', 100)
+            img.height=122;             // img.setAttribute('height', 122)
+
+            // <body>태그에 <img>태그를 자식으로 추가 -> 그 즉시 재렌더링
+            document.body.appendChild(img);
+        };
+    </script>
+
+</head>
+<body>
+    <a href="#" onclick="javascript: add();">[이미지 추가]</a>
+    <p></p>
+</body>
+</html>
