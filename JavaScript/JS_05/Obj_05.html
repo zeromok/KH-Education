@@ -20,16 +20,22 @@
 
     <script>
 
+        /*
+            Array 생성자 배열객체 구조
+        */
+
         // Array 생성자 함수의 매개변수는 가변인자
         var car=new Array (
             ['Sonata','blue',100],
             ['Jeep','red',70],
             ['Passt', 'white', 150]
-        ); // Array 생성자 함수로 배열을 만들면서, 동시에 원소(배열임)을 넣음
+        ); // Array 생성자 함수로 배열을 만들면서, 동시에 원소(배열임)을 넣음 == 2차원배열
+
         console.log(car);
 
         var cname=document.querySelector("#car");    
         cname.textContent="car[2][1] : "+ car[2][1]; 
+
         for(var i=0; i<3; i++) {    
             var cname=document.querySelector("#car"+i);
             cname.textContent=car[i];

@@ -11,7 +11,13 @@
     <p id="d2"></p>
     <p id="d3"></p>
     <p id="d4"></p>
+
     <script>
+
+        /* 
+            Date 객체
+        */
+
         // 기본 생성자 => Now
         document.querySelector("#d1").innerHTML = new Date();
 
@@ -22,7 +28,7 @@
         document.querySelector("#d3").innerHTML=new Date("October 15, 2018 06:18:07");   
 
         // 주의사항 : 월(month)은 0부터 시작
-        // 날짜 지정
+        // 날짜 지정 : 년, 월, 일, 시, 분, 초
         document.querySelector("#d4").innerHTML=new Date(2018, 11, 25, 18, 30, 29);   
     </script>
 

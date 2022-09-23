@@ -15,20 +15,31 @@
 
         console.clear(); console.group("User");
 
-        // 객체 변수를 이용한 객체 생성
+        // 사용자 정의 객체를 만드는 1번째 방법 : 객체 변수를 이용한 객체 생성
+
         var car={
+            
             // Properties defined.
             name: 'Sonata',
             speed: 50,
             color: 'white',
-            start: function() {         // Method defined
+
+            start: function() {         // Method defined(메소드 정의), 메소드명 : start
+
                 return this.speed+10;
+
             }
+
         };  // User-defined Object
+
         console.log(car);
         
         var cname=document.querySelector("#carname");
         cname.textContent=car.name;
+        /* 
+            웹문서안에서 id가 "carname"인 요소를 찾아 변수 cname에 넣은 후,
+            cname.textContent 로 요소안에 car.name을 넣어준다.
+        */
 
         var colname=document.querySelector("#carcolor");
         colname.textContent=car.color;
