@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식으로 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        // $(function() {
+        //     $('#title').css('color', 'red');
+        // });
+
+        $(() => {
+
+           $('*').css('border', '1px solid blue');          // * : 모든요소
+
+           $('#tit').css('background-color', '#ff0')        // 아이디선택자
+                    .css('border', '2px solid #f00');
+            
+           $('.tit').css('background-color', '#ff0')        // 클래스선택자
+                    .css('border', '2px dashed #f00');
+                    
+        });// .jp
+
+    </script>
+
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h1>선택자</h1>
+    <h1>직접 선택자</h1>
+
+    <h1 id="tit">가나다</h1>
+
+    <h1 class="tit">라마바</h1>
+</body>
+</html>

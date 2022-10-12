@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식으로 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        /* $(function() {
+            $('#title').css('color', 'red');
+        }); */
+
+        $(() => {
+            $('#title').css('color', 'red');
+        });// .jp
+
+    </script>
+
+</head>
+<body>
+    <h1 id="title">제목 </h1>
+</body>
+</html>

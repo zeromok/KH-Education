@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식으로 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(() => {
+            let style_1 = {
+                backgroundColor:"#0ff",
+                border:"2px solid red"
+            }
+            let style_2 = {
+                backgroundColor:"#ff0",
+                border:"2px dashed blue"
+            }
+    
+            // 클래스선택자 + 인접형제요소선택(prev) 메소드
+            $(".txt").prev()
+            .css(style_1);
+    
+            $(".txt + p").css(style_2);
+    
+            $(".txt").next().next()
+            .css(style_2);
+
+        });// jq
+
+    </script>
+</head>
+<body>
+
+    <div id="wrap">
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<p class="txt">내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+    
+</body>
+</html>

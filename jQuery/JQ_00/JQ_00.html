@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연동 실습</title>
+
+    <!-- CDN 방식으로 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <!-- jQuery Entry Point 작성 -->
+    <script>
+        // DOM트리가 브라우저 메모리에 완성되면(ready 이벤트), 일련의 제이쿼리 코드를 실행하라!
+        /*
+        $(document).ready(function(){
+            console.clear();
+            console.log('doucument ready...');
+
+            // 제이쿼리 코드작성 부분
+
+        }) 
+        */
+
+        // jQuery 의 단축형 Entry Point
+        $(function(){
+            console.clear();
+            console.log('document ready...');
+        })
+    </script>
+
+</head>
+<body>
+    <!--
+        스크립트 태그는 바디태그 끝에 넣는게 일반적
+        jQuery는 렌더링과 관련없는 헤드태그에 넣어준다.
+    -->
+</body>
+</html>

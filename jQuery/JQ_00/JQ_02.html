@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식으로 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+         // jQuery의 잘못된 적용방법
+         $('#txt').css('color', 'blue');
+        // css메소드 : 선택된 요소노드의 CSS스타일을 변경하는 제이쿼리 메소드
+        // 엔트리 포인트 가 없다!
+
+        $(function() {
+            $('#txt').css('color', 'blue');
+        });
+
+    </script>
+
+</head>
+<body>
+    <p id="txt">내용</p>
+</body>
+</html>

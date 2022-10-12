@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식으로 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(() => {
+                // // 태그/요소 선택자
+                // $('h2').css('background-color', '#0ff')
+                //     .css('border', '2px dashed #f00');
+
+                // // 그룹선택자
+                // $('h1, #tit3').css('background-color', '#0ff')
+                //     .css('border', '2px dashed #f00');
+
+                // // 소속선택자
+                // $('h1.tit').css('background-color', '#0ff')
+                //     .css('border', '2px dashed #f00');
+
+                // 선택자가 선택한 요소노드의 '부모요소'를 선택!
+                $('#list_1').parent().css('border', '2px dashed #f00');
+
+                // 후손 선택자(공백으로 선택자를 구분)
+                // $('#wrap h1').css({ // 연관배열 방식으로, 한번에 여러 스타일 속성 적용
+                //     'background-color':'yellow',
+                //     'border':'2px dashed #f00'
+                // })
+                $('#wrap h1').css({ // 객체 리터럴 방식으로, 한번에 여러 스타일 속성 적용
+                    backgroundColor:'yellow',
+                    border:'2px dashed #f00'
+                })
+
+                });// .jp
+        
+    </script>
+
+</head>
+<body>
+    
+    <h1 class="tit">제이쿼리</h1>
+    <h2>선택자</h2>
+    <h3 id="'tit3">직접 선택자</h3>
+
+
+    <h1>부모 선택자</h1>
+    <h1 id="wrap">
+        <li>리스트1
+            <ul>
+                <li id="list_1">리스트1-1</li>
+                <li>리스트1-2</li>
+            </ul>
+        </li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </h1>
+
+
+    <div id="wrap">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <section>
+            <h1>하위 요소 선택자</h1>
+            <p>내용2</p>
+        </section>
+    </div>
+
+</body>
+</html>
