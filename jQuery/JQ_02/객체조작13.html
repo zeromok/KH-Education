@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+	$(function( ){
+		$("<li>appendTo</li>").appendTo("#listZone");
+		$("#listZone").prepend("<li>prepend</li>");
+	});
+</script>
+</head>
+<body>
+	<ul id="listZone">
+		<li>리스트</li>
+	</ul>
+</body>
+</html>

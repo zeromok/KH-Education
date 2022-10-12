@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container h1 {
+            border: 5px solid black;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(()=>{
+            console.clear();console.group('hi');
+
+            let width = $('.container h1').width();
+            console.log(width);
+
+            let innerWidth = $('.container h1').innerWidth();
+            console.log(innerWidth);
+
+            let outerWidth = $('.container h1').outerWidth();
+            console.log(outerWidth);
+
+            console.log('-------------------------------------------');
+
+            let height = $('.container h1').width();
+            console.log(height);
+
+            let innerHeight = $('.container h1').innerWidth();
+            console.log(innerHeight);
+
+            let outerHeight = $('.container h1').outerWidth();
+            console.log(outerHeight);
+
+            console.groupEnd();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>BOX</h1>
+    </div>
+</body>
+</html>

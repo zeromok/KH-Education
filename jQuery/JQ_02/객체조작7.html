@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+	$(function( ){
+        console.clear();
+
+        // 컨텐츠 영역을 기준으로 한다!
+
+        var w0 = $("#p1").width();     // 선택한 요소노드의 너비(width) 얻기
+		console.log(w0);
+
+		var w1 = $("#p1").height();     // 선택한 요소노드의 높이(height) 얻기
+		console.log(w1);
+
+		var w2 = $("#p1").innerHeight();        // padding 높이를 포함한 높이 얻기
+		console.log(w2);
+        var w3 = $("#p1").innerWidth();        // padding 높이를 포함한 너비 얻기
+		console.log(w3);
+
+		var w4 = $("#p1").outerHeight(); // border+padding+height를 포함한 높이 얻기 
+		console.log(w4);
+        var w5 = $("#p1").outerWidth(); // border+padding+height를 포함한 너비 얻기 
+		console.log(w5);
+
+        // 인자값(px)대로, 선택된 요소노드의 바깥너비와 높이 설정
+        // 바깥높이/너비 = border + padding + width/height
+		$("#p2")
+		.outerWidth(100)
+		.outerHeight(100);
+	});
+</script>
+<style>
+	*{padding: 0;}
+	#p1, #p2{
+		width: 100px;
+		height: 50px;
+		padding:20px;
+		border: 5px solid #000;
+		background-color: #ff0;
+	}
+</style>
+</head>
+<body>
+	<h1>수치 조작 메서드</h1>
+	<p id="p1">내용1</p>
+	<p id="p2">내용2</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<style>
+	*{margin:0;padding:0;}
+	body{line-height:1;}
+	#wrap{
+			height:5000px;
+			padding-top:2000px;
+	}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+    console.clear();
+	$(function( ){
+		var topNum = $("h1").offset().top;
+		console.log(topNum);
+
+        // 웹브라우저를 선택하여 제이쿼리 메소드 적용
+        // 적용내용 : 웹브라우저의 스크롤바의 위치를, 인자로 준 숫자값만큼 이동
+		let sss = $(window).scrollTop(topNum);
+		console.log(sss);
+
+        // 인자값 없이 호출하면, 현재 웹브라우저의 스크롤바의 위치를 반환
+        var sct = $(window).scrollTop();
+		console.log(sct);
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+			<h1>위치 메서드</h1>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+	$(function( ){
+        console.clear();
+		var srcVal = $("#sec_1 img").attr("src"); // src속성을 추가
+		console.log(srcVal);
+
+		$("#sec_1 img")
+		.attr({             // 새로운 속성을 추가 또는 기존속성값의 변경을 한꺼번에
+			width : 200,
+			src : srcVal.replace("684","685"),     // 기존속성값의 변경
+			alt : "바위",
+            newAttr : "새로운 속성"
+		})
+        // 기존 속성을 제거
+		.removeAttr("border");
+	});
+</script>
+</head>
+<body>
+	<h1><strong>객체 조작 및 생성</strong></h1>
+	<section id="sec_1">
+		<h2>이미지 속성</h2>
+		<p><img src="https://picsum.photos/id/684/300/300" alt="산" border="2"></p>
+	</section>
+</body>
+</html>

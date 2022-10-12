@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+	$(function( ){
+        console.clear();
+		var copyObj = $(".box1").children().clone();
+        // .children = 자식의 그 후손까지 전체
+        console.log(copyObj);
+
+		$(".box2").remove( );
+		$(".box3").empty( );
+		$(".box3").append(copyObj);
+	});
+</script>
+</head>
+<body>
+	<div class="box1">
+		<p>내용1</p>
+		<p>내용2</p>
+	</div>
+	<div class="box2">
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	<div class="box3">
+		<p>내용5</p>
+		<p>내용6</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+
+<style>
+	*{margin:0;padding:0;}
+	body{line-height:1;}
+	#wrap{
+			height:5000px;
+			/* padding-top:2000px; */
+	}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+	$(function( ){
+        console.clear();
+		var topNum = $("h1").offset().top;
+        console.log(topNum);
+
+        // 웹브라우저의 수평/수직 스크롤바의 위치(이동거리,px)를 알고싶다
+        console.log($(window).scrollTop());
+        
+		$(window).scrollTop(1000);
+
+		var sct = $(window).scrollTop();
+		console.log(sct);
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+			<h1>위치 메서드</h1>
+	</div>
+</body>
+</html>

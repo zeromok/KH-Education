@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+	$(function( ){
+		var result_1 = $("#user_name").val();
+		console.log(result_1);
+
+		$("#user_id").val("javascript");
+        // value의 값을 변경
+
+        // 선택된 요소노드에서 지정된 이름의 속성값을 얻어오기
+        // 동적으로 바뀐 값을 가져온다. (.attr 과 다름)
+		var result_2 = $("#user_id").prop("defaultValue"); 
+        // defaultValue = 바뀌기 전 기본값
+		console.log(result_2);
+	});
+</script>
+</head>
+<body>
+	<h1>객체 조작 및 생성</h1>
+	<form action="#" id="form_1">
+		<p>
+			<label for="user_name">이름</label> 
+			<input type="text" name="user_name"
+				id="user_name" value="용대리">
+		</p>
+		<p>
+			<label for="user_id">아이디</label> 
+			<input type="text" name="user_id"
+				id="user_id" value="hello">
+		</p>
+	</form>
+</body>
+</html>
