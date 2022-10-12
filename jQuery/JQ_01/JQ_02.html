@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- migrate = 옛버전과의 호환? 때문에 요것도 가져와 붙여주기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script>
+    // $.map() 메소드 : 원래의 값 -> 새로운 유형의 값으로 사상(매핑)
+	$(function(){
+        console.clear();
+		var arr1 = [{
+			    area:"서울", 
+			    name:"무대리"
+			},{
+				area:"부산", 
+				name:"홍과장"
+			},{
+				area:"대전", 
+				name:"박사장"
+			},{
+				area:"서울", 
+				name:"빅마마"
+			}]; // 객체를 원소로 가지는 배열
+
+            // 객체 -> 문자열로 사상(매핑)
+		var arr2 = $.map(arr1, function(element, index){
+			if(element.area == "서울") {
+				return element;
+			}
+		});
+		console.log(arr2);
+		// console.log("==== first End ====");
+
+		// var arr3 = $.grep(arr1, function(a, b){
+		// 	if(a.area == "서울") {
+		// 		return true;
+		// 	} else {
+		// 		return false;
+		// 	}
+		// });
+		// console.log(arr3);
+		// console.log("==== Second End ====");    
+	});
+</script>
+</head>
+<body>
+</body>
+</html>
