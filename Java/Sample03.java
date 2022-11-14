@@ -94,7 +94,7 @@ public class Sample03 {
 //		for(int i=0; i<newStrArray.length; i++) {
 //			System.out.print(newStrArray[i] + ", ");
 //		}
-        
+
         String[] newStrArr = Arrays.copyOf(oldStrArray, newStrArray.length);
         System.out.println(Arrays.toString(newStrArr));
 
