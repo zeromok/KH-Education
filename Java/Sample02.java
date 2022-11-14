@@ -66,6 +66,15 @@ public class Sample02 {
         // 2.
         System.out.println(Arrays.toString(arr00)); // [10, 20, 30]
 
+        // ================================================================================
+
+        // 인덱싱과 대입연산자를 이용해서 배열의 원소 값을 변경해보자
+        int[] arr01 = new int[3];
+        arr01[0] = 100;
+        arr01[1] = 200;
+        arr01[2] = 300;
+        System.out.println(Arrays.toString(arr01)); // [100, 200, 300]
+
 
 
     }// main()
