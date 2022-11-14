@@ -88,15 +88,14 @@ public class Sample03 {
         // offset 의미 : 시작위치
 
         System.arraycopy( oldStrArray, 0, newStrArray, 0, oldStrArray.length);
-
-        System.out.println(Arrays.toString(newStrArray));
+        System.out.println("arraycopy" + Arrays.toString(newStrArray));
 
 //		for(int i=0; i<newStrArray.length; i++) {
 //			System.out.print(newStrArray[i] + ", ");
 //		}
 
         String[] newStrArr = Arrays.copyOf(oldStrArray, newStrArray.length);
-        System.out.println(Arrays.toString(newStrArr));
+        System.out.println("copyOf" + Arrays.toString(newStrArr));
 
 
     }// main()
