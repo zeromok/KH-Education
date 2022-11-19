@@ -1,4 +1,4 @@
-package Java.다형성;
+package Java.생성자;
 
 public class Sample01 {
 
