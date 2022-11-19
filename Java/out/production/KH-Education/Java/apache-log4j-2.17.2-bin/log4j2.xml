@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Configuration status="WARN">
+
+	
+    <Appenders>
+    
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %5p --- [%-15.40t] %-1.50c{1.}.(%-M:%-L) │ %m%n%ex"/>
+        </Console>
+    </Appenders>
+
+
+    <Loggers>
+        <Logger name="Java.NetworkBasic" level="trace" />
+        
+
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

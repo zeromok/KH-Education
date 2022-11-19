@@ -37,11 +37,11 @@ public class Ex00 {
 
         // 실행문장을 생략, 디폴트 생략
         // -> 표현 오른쪽은 꼭 단일수행이 아니여도 된다. {} 중괄호 사용
-        memberType = switch (grade) {
-          case 1 -> { System.out.println("VVIP"); }
-          case 2 -> { System.out.println("VIP"); }
-          case 3, 4, 5 -> { System.out.println("General"); }
-        };
+//        memberType = switch (grade) {
+//          case 1 -> { System.out.println("VVIP"); }
+//          case 2 -> { System.out.println("VIP"); }
+//          case 3, 4, 5 -> { System.out.println("General"); }
+//        };
 
         // switch 의 반환 = yield
         // yield = break value; 와 값다.
