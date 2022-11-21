@@ -1,4 +1,4 @@
-package Java.Stram;
+package Java.Stream;
 
 import java.io.IOException;
 import java.net.InetAddress;
