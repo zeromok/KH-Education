@@ -1,11 +1,9 @@
-package Java.Stream;
+package Java.Stream00;
 
 import lombok.Cleanup;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
 public class ReadEx02 {
 

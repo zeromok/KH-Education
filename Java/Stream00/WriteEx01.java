@@ -1,4 +1,4 @@
-package Java.Stream;
+package Java.Stream00;
 
 import lombok.Cleanup;
 
