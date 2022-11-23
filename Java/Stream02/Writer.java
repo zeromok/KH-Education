@@ -1,4 +1,4 @@
-package Java.Stream03;
+package Java.Stream02;
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
