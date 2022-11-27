@@ -20,6 +20,7 @@ public class Sample02_1 {
         oos.flush();
         oos.close();
         fos.close();
-    }
+
+    } //main()
 
 } // end class
