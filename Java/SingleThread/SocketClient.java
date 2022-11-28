@@ -66,17 +66,18 @@ public class SocketClient {
                 bw.write(sendLine);						// Block I/O
 
                 // 왜? 엔터키 코드값을 전송할까요!?
-//				bw.write(CR);
-//				bw.write(LF);
+				bw.write(CR);
+				bw.write(LF);
 
                 bw.flush();
 
                 System.out.println("2. sendLine : " + sendLine);
             } catch(Exception e) {
                 System.out.println("* Exception : {} - {}" + e.getClass().getName() + e.getMessage());
-            } finally {
+            }
+//            finally {
 //				sock.shutdownOutput();	// Socket 객체는 입/출력을 선택적으로 닫을 수 있습니다!
-            } // try-catch-finally
+//            } // try-catch-finally
 
 
 //			-----------------------
@@ -84,6 +85,7 @@ public class SocketClient {
 //			-----------------------
 
             try {
+
                 InputStream is = socket.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
@@ -92,9 +94,10 @@ public class SocketClient {
                 System.out.println("3. recvLine : " + recvLine);
             } catch(Exception e) {
                 System.out.println("* Exception : {} - {}" + e.getClass().getName() + e.getMessage());
-            } finally {
+            }
+//            finally {
 //				sock.shutdownInput();
-            } // try-catch-finally
+//            } // try-catch-finally
 
         } // try-with-resources
 //
