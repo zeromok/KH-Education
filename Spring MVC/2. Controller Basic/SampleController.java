@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @NoArgsConstructor
 @Controller
 /*
-stereotype Annotation : 정형화된 어노테이션
-역할이 정해져있다. (Controller)
-기본적으로 Spring Beans Container 에 등록될 클래스는 자바빈즈 규약을 지키는 "자바빈즈" 클래스이다.
-현재의 클래스의 역할 : Controller 정의
+    stereotype Annotation : 정형화된 어노테이션
+    역할이 정해져있다. (Controller)
+    기본적으로 Spring Beans Container 에 등록될 클래스는 자바빈즈 규약을 지키는 "자바빈즈" 클래스이다.
+    현재의 클래스의 역할 : Controller 정의
 */
 // Base URI 선언
 //@RequestMapping("/base/*")    // Wildcard Base URI : 가능한 쓰지 말자
@@ -24,10 +24,10 @@ public class SampleController {
     // POJO
 
     /*
-    컨트롤러에 선언되는 메소드 => 컨트롤러의 핸들러(Handler) 메소드라고 부름
-    그럼 무엇을 핸들링 하느냐? => 특정 request 를 처리한다.
-    => 1.어떤 전송방식(Http method)과 2.어떤 Request URI 를 가지고 들어온 Request 를 처리하겠다 라는 의미
-    => 위의 2가지 정보를 설정하는 어노테이션이 바로 @RequestMapping 임
+        컨트롤러에 선언되는 메소드 => 컨트롤러의 핸들러(Handler) 메소드라고 부름
+        그럼 무엇을 핸들링 하느냐? => 특정 request 를 처리한다.
+        => 1.어떤 전송방식(Http method)과 2.어떤 Request URI 를 가지고 들어온 Request 를 처리하겠다 라는 의미
+        => 위의 2가지 정보를 설정하는 어노테이션이 바로 @RequestMapping 임
     */
     @RequestMapping(
             path = { "/doA", "/doB" },
@@ -37,13 +37,13 @@ public class SampleController {
     // /.../.../doA 경로를 지정할 수있다. (대소문자를 인식. : case-sensitive) = 가상 URI
 
     /*
-    공통이 되는 URI 를 Base URI 라고 부르고 그 이후 다른 URI 를 상세 URI 라고 부른다.
-    Base URI 를 지정할 수 있다.
-    전체 요청 URI == Base URI + Detail URI
-        1. @RequestMapping("/base/*") => 상세 URI : @RequestMapping("doA") => /base/doA
-        2. @RequestMapping("/base/") => 상세 URI : @RequestMapping("/doA") => /base/doA
-        3.(사용주의) @RequestMapping("/base") => 상세 URI : @RequestMapping("/doA") => /base/doA
-                                            => 상세 URI : @RequestMapping("doA") => /basedoA (X)
+        공통이 되는 URI 를 Base URI 라고 부르고 그 이후 다른 URI 를 상세 URI 라고 부른다.
+        Base URI 를 지정할 수 있다.
+        전체 요청 URI == Base URI + Detail URI
+            1. @RequestMapping("/base/*") => 상세 URI : @RequestMapping("doA") => /base/doA
+            2. @RequestMapping("/base/") => 상세 URI : @RequestMapping("/doA") => /base/doA
+            3.(사용주의) @RequestMapping("/base") => 상세 URI : @RequestMapping("/doA") => /base/doA
+                                                  => 상세 URI : @RequestMapping("doA") => /basedoA (X)
     */
     public void doA() {
         log.debug("doA() invoked.");
@@ -54,9 +54,9 @@ public class SampleController {
 //    @RequestMapping("")
     @RequestMapping
      /*
-     Request URI = Base URI + Detail URI = "/base/" + "" = /base/
-     Request URI = Base URI + Detail URI = "/base/*" = /base/*
-     뒤에 Wildcard 가 있기 때문에 어떤 문자가 와도 다 매핑 => 충돌이 일어날 수 있다.
+        Request URI = Base URI + Detail URI = "/base/" + "" = /base/
+        Request URI = Base URI + Detail URI = "/base/*" = /base/*
+        뒤에 Wildcard 가 있기 때문에 어떤 문자가 와도 다 매핑 => 충돌이 일어날 수 있다.
       */
     public void basic() {
         log.debug("basic() invoked.");
@@ -105,10 +105,10 @@ public class SampleController {
 
     // 6. .jsp 호출 메커니즘을 알아보자
     /*
-    컨트롤러의 핸들러는 아래의 역할 및 값을 반환
-    1. 역할 : 요청을 위임받아 처리
-    2. 뷰의 이름을 반환
-    3. 역할에 따라, 요청을 위임처리한 결과 => Model(비즈니스데이터 / Model = 상자) 생성 및 View 로 전달
+        컨트롤러의 핸들러는 아래의 역할 및 값을 반환
+        1. 역할 : 요청을 위임받아 처리
+        2. 뷰의 이름을 반환
+        3. 역할에 따라, 요청을 위임처리한 결과 => Model(비즈니스데이터 / Model = 상자) 생성 및 View 로 전달
     */
     @GetMapping("/ex01")
     // == @RequestMapping(path = "/basicOnlyGet", method = RequestMethod.GET)
@@ -117,9 +117,9 @@ public class SampleController {
 
         return "ex01";
          /*
-         이게 바로 MVC 패턴에서 View 의 이름
-         BY View Resolver Configuration
-         /WEB_INF/views/ + ex01 + .jsp == /WEB_INF/views/ex01.jsp
+            이게 바로 MVC 패턴에서 View 의 이름
+            BY View Resolver Configuration
+            /WEB_INF/views/ + ex01 + .jsp == /WEB_INF/views/ex01.jsp
          */
     }
 
