@@ -95,7 +95,7 @@ public class ReturnTypesController {
     */
     @GetMapping("/ResponseBody")
      // 1. @ResponseBody 을 붙이면 응답메소드 바디에 넣어 전달
-//    public @ResponseBody 1SampleDTO returnResponseBody(
+//    public @ResponseBody SampleDTO returnResponseBody(
 
     // 2. @ResponseBody 반드시 필요하지는 않다. 붙이지 않으면 모델상자 없이 자바객체를 전달. (model 없는 model)
     public SampleDTO returnResponseBody( @NonNull @RequestParam("name") String NAME,
