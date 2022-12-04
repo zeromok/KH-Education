@@ -64,7 +64,7 @@ public class Server {
             log.info("Server finished.");
         } // try-with-resources
 
-    } // start
+    } // start()
 
 
     static class ServerReceiver extends Thread {
@@ -178,7 +178,7 @@ public class Server {
 
         } // run
 
-    } // end class
+    } // end class : ServerReceiver
 
 
     private static void publish(String fromKey, String message, boolean toSelf) throws IOException {
@@ -212,7 +212,7 @@ public class Server {
 
         } // enhanced for
 
-    } // publish
+    } // publish()
 
 
     public static void main(String[] args) {
@@ -223,6 +223,7 @@ public class Server {
 //		});
 
         new Server().start();
-    } // main
+
+    } // main()
 
 } // end class

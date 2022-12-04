@@ -33,6 +33,7 @@ public class Client {
 
             R.join();
             S.join();
+
         } finally {
             log.info("Disconnected.");
         } // try-with-resources
