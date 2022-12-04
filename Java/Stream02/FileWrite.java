@@ -22,7 +22,7 @@ public class FileWrite {
 
 
 //		for(int i=0; i<1000000000; i++);{
-//			Thread.sleep(1000 * 2);
+//			BeepThread.sleep(1000 * 2);
 //
 //			System.out.println("done.");
 //		}
