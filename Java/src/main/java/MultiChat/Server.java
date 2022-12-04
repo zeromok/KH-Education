@@ -25,7 +25,7 @@ public class Server {
     private static Map<String, Socket> clients;
 
     public Server() {
-        log.trace("Default constructor invoked.");
+        log.trace("Server.Default constructor() 호출");
 
         // Map 컬렉션(collection) 생성
         clients = new HashMap<>();
@@ -40,7 +40,7 @@ public class Server {
 
 
     private void start () {
-        log.trace("start() invoked.");
+        log.trace("Server.start() invoked.");
 
         try (ServerSocket serverSock = new ServerSocket(port);) {
             log.debug("Server started.");
@@ -73,7 +73,7 @@ public class Server {
 
 
         ServerReceiver(Socket sock) {
-            log.trace("Constructor({}) invoked.", sock);
+            log.trace("ServerReceiver.Constructor({}) invoked.", sock);
 
             this.sock = sock;
             this.clientKey = sock.getRemoteSocketAddress().toString();
@@ -109,7 +109,7 @@ public class Server {
 
         @Override
         public void run() {
-            log.trace("run() invoked.");
+            log.trace("ServerReceiver.run() invoked.");
 
             try (this.sock) {
 
@@ -182,7 +182,7 @@ public class Server {
 
 
     private static void publish(String fromKey, String message, boolean toSelf) throws IOException {
-        log.trace("publish({}, {}) invoked.", fromKey, message);
+        log.trace("Server.publish({}, {}) invoked.", fromKey, message);
 
         Set<String> keys = clients.keySet();
 

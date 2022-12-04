@@ -21,7 +21,7 @@ public class Client {
         log.trace("main({}) invoked.", Arrays.toString(args));
 
         try (Socket sock = new Socket(host, port)) {
-            log.info("Connected to the server addr: {}, port: {}", host, port);
+            log.info("[Server 와 연결 완료] addr: {}, port: {}", host, port);
 
             Thread R = new Receiver(sock.getInputStream());
             R.start();
@@ -48,7 +48,7 @@ public class Client {
 
 
         Sender(OutputStream os) {
-            log.trace("constructor({}) invoked.", os);
+            log.trace("Client.Sender constructor({}) invoked.", os);
 
             this.os = os;
         } // constructor
@@ -99,14 +99,14 @@ public class Client {
 
 
         Receiver(InputStream is) {
-            log.trace("constructor({}) invoked.", is);
+            log.trace("Client.Receiver constructor({}) invoked.", is);
 
             this.is = is;
         } // constructor
 
         @Override
         public void run() {
-            log.trace("run() invoked.");
+            log.trace("Client.run() invoked.");
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
