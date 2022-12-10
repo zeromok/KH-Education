@@ -6,7 +6,7 @@ public class ProductEx {
 
         // 1. 제네릭 클래스 product 타입의 객체 생성 -> 사용
         // so, 타입파라미터 T -> 구체타입으로 "Tv"를 전달
-        //     타입파라미터 T -> 구체타입으로 "String"를 전달
+        //     타입파라미터 M -> 구체타입으로 "String"를 전달
 //        Product<Tv, String> product1 = new Product<Tv, String>();
 
 //        product1.setKind(new Tv());
