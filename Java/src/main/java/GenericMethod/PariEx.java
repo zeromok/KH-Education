@@ -8,6 +8,9 @@ public class PariEx {
         Pair<Integer, String> p1 = new Pair<Integer, String>(1, "사과");
         Pair<Integer, String> p2 = new Pair<Integer, String>(1, "사과");
 
+        System.out.println(p1 == p2);       // false
+        System.out.println(p1.equals(p2));  // false
+
         // 제네릭 메소드 : <T> boolean compare(...)
         boolean result1 = Util.<Integer, String>compare(p1, p2);
 
