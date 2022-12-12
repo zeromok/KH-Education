@@ -22,6 +22,6 @@ public class Student extends Person {
 
         Student student = new Student("나다.");
 
-    }
+    } // main()
 
 } // end class
