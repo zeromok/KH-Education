@@ -9,11 +9,14 @@ public class LambdaEx {
     public static void main(String...args) {
         log.trace(args);
 
+        // 람다식을 이용한 익명구현객체 생성
         Runnable task = () -> {
             log.trace("Anonymous::run() invoked.");
         };
 
-        log.info("task");
+        log.info("-- task --");
+
+        // 람다식으로 추상메소드를 구현
         task.run();
 
     } // main()
