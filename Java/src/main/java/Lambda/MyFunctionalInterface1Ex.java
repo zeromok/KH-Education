@@ -7,6 +7,7 @@ public class MyFunctionalInterface1Ex {
 
     public static void main(String[] args) {
 
+        // MyFunctionalInterface1 타입의 변수 f1 선언
         MyFunctionalInterface1 f1;
 
         // 익명구현객체코딩기법
