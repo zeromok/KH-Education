@@ -7,12 +7,15 @@ public class UsingThis {
 
     public int outerField = 10;
 
-    void instanceMethod(){
+    void instanceMethod() {
+
         String name = "mokk";
+
         class LocalClass{
             ;;
         }
-    }
+
+    } // instanceMethod()
 
 
     // 클래스 블록 내부에서 선언된 클래스를 "중첩클래스"라고 하며
@@ -38,6 +41,7 @@ public class UsingThis {
             // 람다식이 생성한 "익명구현객체" 역시 Heap area 에 생성되는 객체임
             // 이 객체의 생명주기 : GC 될 때 파괴됨
             MyFunctionalInterface fi = () -> {
+
                 System.out.println("2. This 는 자기를 가르키지 못하고 자기를 선언한 클래스의 주소 : " + this);
                 System.out.println("\t + type : " + this.getClass().getName());
 
